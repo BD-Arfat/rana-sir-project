@@ -11,6 +11,7 @@ import {
 } from 'react-icons/fa';
 
 const OurService = () => {
+
     const services = [
         {
             id: '01',
@@ -57,119 +58,134 @@ const OurService = () => {
     ];
 
     return (
-        <section className="relative overflow-hidden bg-[#111C1A] py-20 md:py-28">
+        <section className="bg-[#F7F9F3] py-20 md:py-24">
 
-            {/* Background Decoration */}
-            <div className="absolute -right-40 top-10 h-96 w-96 rounded-full bg-[#C5F36B]/5 blur-[120px]" />
-            <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-[#167D75]/10 blur-[120px]" />
-
-            <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
+            <div className="mx-auto max-w-7xl px-5 lg:px-8">
 
                 {/* Section Heading */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7 }}
-                    className="mx-auto mb-16 max-w-3xl text-center"
-                >
-                    <div className="mb-5 inline-flex items-center gap-3">
-                        <span className="h-[2px] w-10 bg-[#C5F36B]" />
-                        <span className="text-sm font-bold uppercase tracking-[3px] text-[#C5F36B]">
-                            Our Services
-                        </span>
-                        <span className="h-[2px] w-10 bg-[#C5F36B]" />
-                    </div>
-
-                    <h2 className="text-4xl font-extrabold leading-tight text-white md:text-5xl">
-                        Complete Solutions for
-                        <span className="block text-[#C5F36B]">
-                            Industrial Safety.
-                        </span>
-                    </h2>
-
-                    <p className="mt-6 text-base leading-8 text-gray-400 md:text-lg">
-                        We focus on dependable lifting equipment and industrial
-                        safety solutions to help businesses create safer and
-                        more efficient working environments.
-                    </p>
-                </motion.div>
-
-                {/* Services Grid */}
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {services.map((service, index) => (
-                        <motion.div
-                            key={service.id}
-                            initial={{ opacity: 0, y: 35 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{
-                                duration: 0.6,
-                                delay: index * 0.1,
-                            }}
-                            className="group relative overflow-hidden rounded-xl border border-white/10 bg-[#1B2B27] p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#C5F36B]/50 hover:bg-[#20352E] md:p-8"
-                        >
-                            {/* Card Number */}
-                            <div className="absolute right-7 top-7 text-4xl font-extrabold text-white/5 transition-colors duration-300 group-hover:text-[#C5F36B]/10">
-                                {service.id}
-                            </div>
-
-                            {/* Icon */}
-                            <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-[#C5F36B]/10 text-3xl text-[#C5F36B] transition-all duration-500 group-hover:bg-[#C5F36B] group-hover:text-[#111C1A]">
-                                {service.icon}
-                            </div>
-
-                            {/* Content */}
-                            <h3 className="mt-7 text-xl font-bold text-white transition-colors duration-300 group-hover:text-[#C5F36B] md:text-2xl">
-                                {service.title}
-                            </h3>
-
-                            <p className="mt-4 text-sm leading-7 text-gray-400">
-                                {service.description}
-                            </p>
-
-                            {/* Bottom Link */}
-                            <a
-                                href="/contact"
-                                className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-[#C5F36B] transition-all duration-300 group-hover:gap-4"
-                            >
-                                Get in Touch
-                                <HiArrowUpRight className="text-lg" />
-                            </a>
-
-                            {/* Bottom Accent */}
-                            <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#C5F36B] transition-all duration-500 group-hover:w-full" />
-                        </motion.div>
-                    ))}
-                </div>
-
-                {/* Bottom CTA */}
                 <motion.div
                     initial={{ opacity: 0, y: 25 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.7 }}
-                    className="mt-16 flex flex-col items-center justify-between gap-6 rounded-2xl border border-white/10 bg-white/5 p-8 md:flex-row md:p-10"
+                    transition={{ duration: 0.6 }}
+                    className="mx-auto mb-14 max-w-2xl text-center"
                 >
+                    <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#C5F36B]/30 px-4 py-2">
+                        <span className="h-2 w-2 rounded-full bg-[#1B2B27]" />
+
+                        <span className="text-xs font-bold uppercase tracking-[2px] text-[#1B2B27]">
+                            Our Services
+                        </span>
+                    </div>
+
+                    <h2 className="text-3xl font-extrabold leading-tight text-[#1B2B27] md:text-5xl">
+                        What We Do for
+                        <span className="block text-[#789B38]">
+                            Industrial Safety.
+                        </span>
+                    </h2>
+
+                    <p className="mt-5 text-sm leading-7 text-[#1B2B27]/65 md:text-base">
+                        We provide reliable lifting equipment and industrial safety
+                        solutions to help businesses maintain safer and more
+                        efficient working environments.
+                    </p>
+                </motion.div>
+
+
+                {/* Services Grid */}
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+                    {services.map((service, index) => (
+
+                        <motion.div
+                            key={service.id}
+                            initial={{ opacity: 0, y: 25 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{
+                                duration: 0.5,
+                                delay: index * 0.08,
+                            }}
+                            className="group rounded-xl border border-[#1B2B27]/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#C5F36B] hover:shadow-lg md:p-8"
+                        >
+
+                            {/* Card Top */}
+                            <div className="flex items-center justify-between">
+
+                                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#C5F36B]/30 text-2xl text-[#1B2B27] transition-colors duration-300 group-hover:bg-[#C5F36B]">
+                                    {service.icon}
+                                </div>
+
+                                <span className="text-3xl font-extrabold text-[#1B2B27]/10 transition-colors duration-300 group-hover:text-[#C5F36B]">
+                                    {service.id}
+                                </span>
+
+                            </div>
+
+
+                            {/* Card Content */}
+                            <h3 className="mt-7 text-xl font-bold text-[#1B2B27] transition-colors duration-300 group-hover:text-[#789B38]">
+                                {service.title}
+                            </h3>
+
+                            <p className="mt-3 text-sm leading-7 text-[#1B2B27]/65">
+                                {service.description}
+                            </p>
+
+
+                            {/* Card Link */}
+                            <a
+                                href="/contact"
+                                className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#1B2B27] transition-all duration-300 group-hover:gap-3 group-hover:text-[#789B38]"
+                            >
+                                Get in Touch
+
+                                <HiArrowUpRight className="text-lg" />
+                            </a>
+
+                            {/* Bottom Accent */}
+                            <div className="mt-6 h-[2px] w-10 rounded-full bg-[#C5F36B] transition-all duration-300 group-hover:w-20" />
+
+                        </motion.div>
+
+                    ))}
+
+                </div>
+
+
+                {/* Bottom CTA */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="mt-14 flex flex-col items-start justify-between gap-6 rounded-xl bg-[#1B2B27] p-7 md:flex-row md:items-center md:p-10"
+                >
+
                     <div>
-                        <h3 className="text-2xl font-bold text-white md:text-3xl">
-                            Looking for a Reliable Safety Solution?
+                        <h3 className="text-xl font-bold text-white md:text-3xl">
+                            Need a Reliable Safety Solution?
                         </h3>
-                        <p className="mt-3 text-sm leading-7 text-gray-400">
-                            Contact our team to discuss your industrial safety requirements.
+
+                        <p className="mt-3 text-sm leading-7 text-white/65">
+                            Get in touch with our team to discuss your industrial requirements.
                         </p>
                     </div>
 
                     <a
                         href="/contact"
-                        className="group inline-flex shrink-0 items-center gap-3 rounded-md bg-[#C5F36B] px-7 py-4 text-sm font-bold text-[#111C1A] transition-all duration-300 hover:bg-white"
+                        className="group inline-flex shrink-0 items-center gap-3 rounded-lg bg-[#C5F36B] px-6 py-3.5 text-sm font-bold text-[#1B2B27] transition-all duration-300 hover:bg-white"
                     >
                         Contact Us
-                        <HiArrowUpRight className="text-xl transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+
+                        <HiArrowUpRight className="text-lg transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
                     </a>
+
                 </motion.div>
 
             </div>
+
         </section>
     );
 };

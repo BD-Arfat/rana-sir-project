@@ -5,7 +5,7 @@ import { HiArrowUpRight } from 'react-icons/hi2';
 
 const Footer = () => {
     return (
-        <footer className="bg-slate-950 text-white">
+        <footer className="bg-[#1B2B27] text-white">
 
             <div className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
 
@@ -14,16 +14,16 @@ const Footer = () => {
                     {/* Company Logo & Description */}
                     <div className="text-center md:text-left">
                         <Link to="/" className="inline-flex items-center gap-3">
-                            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-xl font-bold text-white">
+                            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#C5F36B] text-xl font-bold text-[#1B2B27]">
                                 C
                             </div>
 
                             <span className="text-2xl font-extrabold tracking-tight">
-                                Company<span className="text-blue-500">.</span>
+                                Company<span className="text-[#C5F36B]">.</span>
                             </span>
                         </Link>
 
-                        <p className="mt-4 max-w-sm text-sm leading-7 text-slate-400">
+                        <p className="mt-4 max-w-sm text-sm leading-7 text-white/60">
                             Building trust, delivering quality and creating a better future.
                         </p>
                     </div>
@@ -34,12 +34,12 @@ const Footer = () => {
                             Quick Links
                         </h3>
 
-                        <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-slate-400 md:justify-start">
-                            <Link to="/" className="transition hover:text-blue-400">Home</Link>
-                            <Link to="/about" className="transition hover:text-blue-400">About Us</Link>
-                            <Link to="/services" className="transition hover:text-blue-400">Services</Link>
-                            <Link to="/projects" className="transition hover:text-blue-400">Projects</Link>
-                            <Link to="/contact" className="transition hover:text-blue-400">Contact</Link>
+                        <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-white/60 md:justify-start">
+                            <Link to="/" className="transition hover:text-[#C5F36B]">Home</Link>
+                            <Link to="/about" className="transition hover:text-[#C5F36B]">About Us</Link>
+                            <Link to="/services" className="transition hover:text-[#C5F36B]">Services</Link>
+                            <Link to="/projects" className="transition hover:text-[#C5F36B]">Projects</Link>
+                            <Link to="/contact" className="transition hover:text-[#C5F36B]">Contact</Link>
                         </div>
                     </div>
 
@@ -51,15 +51,15 @@ const Footer = () => {
 
                         <div className="flex items-center justify-center gap-3 md:justify-start">
 
-                            <a href="#" aria-label="Facebook" className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-slate-400 transition duration-300 hover:border-blue-500 hover:bg-blue-600 hover:text-white">
+                            <a href="#" aria-label="Facebook" className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white/60 transition duration-300 hover:border-[#C5F36B] hover:bg-[#C5F36B] hover:text-[#1B2B27]">
                                 <FaFacebookF />
                             </a>
 
-                            <a href="#" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-slate-400 transition duration-300 hover:border-pink-500 hover:bg-pink-600 hover:text-white">
+                            <a href="#" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white/60 transition duration-300 hover:border-[#C5F36B] hover:bg-[#C5F36B] hover:text-[#1B2B27]">
                                 <FaInstagram />
                             </a>
 
-                            <a href="#" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-slate-400 transition duration-300 hover:border-blue-500 hover:bg-blue-600 hover:text-white">
+                            <a href="#" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white/60 transition duration-300 hover:border-[#C5F36B] hover:bg-[#C5F36B] hover:text-[#1B2B27]">
                                 <FaLinkedinIn />
                             </a>
 
@@ -71,7 +71,7 @@ const Footer = () => {
                 {/* Bottom Footer */}
                 <div className="flex flex-col items-center justify-between gap-5 pt-7 text-center sm:flex-row">
 
-                    <p className="text-sm text-slate-500">
+                    <p className="text-sm text-white/40">
                         © {new Date().getFullYear()} Company. All rights reserved.
                     </p>
 
@@ -81,7 +81,7 @@ const Footer = () => {
                             e.preventDefault();
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}
-                        className="group flex items-center gap-2 text-sm font-semibold text-slate-400 transition hover:text-blue-400"
+                        className="group flex items-center gap-2 text-sm font-semibold text-white/60 transition hover:text-[#C5F36B]"
                     >
                         Back to Top
                         <HiArrowUpRight className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />

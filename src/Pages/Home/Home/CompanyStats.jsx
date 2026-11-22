@@ -25,7 +25,6 @@ const CountUp = ({ target, suffix = '+' }) => {
                             1
                         );
 
-                        // Smooth ease-out animation
                         const easeOut = 1 - Math.pow(1 - progress, 4);
 
                         const currentCount = Math.floor(easeOut * target);
@@ -86,11 +85,12 @@ const CompanyStats = () => {
                     "url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=85&w=2000')",
             }}
         >
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 -z-10 bg-[#111C1A]/75" />
+
+            {/* Dark Green Overlay */}
+            <div className="absolute inset-0 -z-10 bg-[#1B2B27]/80" />
 
             {/* Background Gradient */}
-            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#111C1A]/50 via-transparent to-[#111C1A]/50" />
+            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#1B2B27]/60 via-transparent to-[#1B2B27]/60" />
 
             <div className="mx-auto max-w-7xl px-5 lg:px-8">
 
@@ -100,16 +100,30 @@ const CompanyStats = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7 }}
-                    className="mb-12 text-center"
+                    className="mb-14 text-center"
                 >
-                    <span className="text-sm font-bold uppercase tracking-[4px] text-[#C5F36B]">
-                        Our Achievements
-                    </span>
 
-                    <h2 className="mt-4 text-3xl font-extrabold text-white md:text-4xl">
-                        Numbers That Define Our Journey
+                    <div className="mb-5 flex items-center justify-center gap-3">
+
+                        <span className="h-[2px] w-9 bg-[#C5F36B]" />
+
+                        <span className="text-sm font-bold uppercase tracking-[3px] text-[#C5F36B]">
+                            Our Achievements
+                        </span>
+
+                        <span className="h-[2px] w-9 bg-[#C5F36B]" />
+
+                    </div>
+
+                    <h2 className="mx-auto max-w-3xl text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl">
+                        Numbers That Define
+                        <span className="block text-[#C5F36B]">
+                            Our Journey.
+                        </span>
                     </h2>
+
                 </motion.div>
+
 
                 {/* Statistics Cards */}
                 <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
@@ -124,25 +138,28 @@ const CompanyStats = () => {
                                 duration: 0.7,
                                 delay: index * 0.15,
                             }}
-                            whileHover={{ y: -8 }}
-                            className="group flex min-h-[150px] flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/15 px-3 py-7 text-center shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-white/20 md:min-h-[180px] md:py-9"
+                            whileHover={{ y: -7 }}
+                            className="group flex min-h-[155px] flex-col items-center justify-center rounded-xl border border-white/15 bg-[#1B2B27]/70 px-3 py-7 text-center shadow-lg backdrop-blur-md transition-all duration-300 hover:border-[#C5F36B]/60 hover:bg-[#1B2B27]/90 md:min-h-[190px] md:py-9"
                         >
+
                             {/* Animated Number */}
-                            <h3 className="text-4xl font-extrabold tracking-tight text-[#F59E0B] md:text-6xl">
+                            <h3 className="text-4xl font-extrabold tracking-tight text-[#C5F36B] md:text-6xl">
                                 <CountUp target={stat.number} />
                             </h3>
 
                             {/* Title */}
-                            <p className="mt-3 text-xs font-semibold text-white md:text-base">
+                            <p className="mt-3 text-xs font-semibold text-white/90 sm:text-sm md:text-base">
                                 {stat.title}
                             </p>
 
                             {/* Bottom Line */}
-                            <div className="mt-4 h-[3px] w-8 rounded-full bg-[#F59E0B] transition-all duration-500 group-hover:w-16" />
+                            <div className="mt-5 h-[3px] w-9 rounded-full bg-[#C5F36B] transition-all duration-500 group-hover:w-16" />
+
                         </motion.div>
                     ))}
 
                 </div>
+
             </div>
         </section>
     );

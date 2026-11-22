@@ -26,14 +26,13 @@ const Navbar = () => {
         { name: 'Services', path: '/services' },
         { name: 'Projects', path: '/projects' },
         { name: 'Our Team', path: '/team' },
-        { name: 'Contact', path: '/contact' },
     ];
 
     return (
         <header
             className={`fixed top-0 left-0 z-50 w-full transition-all duration-500 ${
                 isScrolled
-                    ? 'bg-[#167D75] shadow-lg shadow-black/10'
+                    ? 'bg-[#1B2B27] shadow-lg shadow-black/20'
                     : 'bg-transparent'
             }`}
         >
@@ -45,16 +44,16 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                     className="flex items-center gap-3"
                 >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-xl font-bold text-[#167D75]">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#C5F36B] text-xl font-extrabold text-[#1B2B27]">
                         C
                     </div>
 
                     <div>
                         <h2 className="text-xl font-extrabold tracking-tight text-white">
-                            Company<span className="text-white">.</span>
+                            Company<span className="text-[#C5F36B]">.</span>
                         </h2>
 
-                        <p className="text-[10px] font-semibold uppercase tracking-[2px] text-white/80">
+                        <p className="text-[10px] font-semibold uppercase tracking-[2px] text-white/70">
                             Building The Future
                         </p>
                     </div>
@@ -70,8 +69,8 @@ const Navbar = () => {
                             className={({ isActive }) =>
                                 `relative text-sm font-semibold transition-colors duration-300 ${
                                     isActive
-                                        ? 'text-white'
-                                        : 'text-white/80 hover:text-white'
+                                        ? 'text-[#C5F36B]'
+                                        : 'text-white/80 hover:text-[#C5F36B]'
                                 }`
                             }
                         >
@@ -80,7 +79,7 @@ const Navbar = () => {
                                     {item.name}
 
                                     {isActive && (
-                                        <span className="absolute -bottom-2 left-0 h-0.5 w-full rounded-full bg-white" />
+                                        <span className="absolute -bottom-2 left-0 h-0.5 w-full rounded-full bg-[#C5F36B]" />
                                     )}
                                 </span>
                             )}
@@ -93,9 +92,9 @@ const Navbar = () => {
                 <div className="hidden lg:block">
                     <NavLink
                         to="/contact"
-                        className="group flex items-center gap-2 rounded-lg border border-white bg-white px-5 py-3 text-sm font-bold text-[#167D75] transition-all duration-300 hover:bg-[#1F8A80] hover:text-white"
+                        className="group flex items-center gap-2 rounded-lg bg-[#C5F36B] px-5 py-3 text-sm font-bold text-[#1B2B27] transition-all duration-300 hover:bg-white hover:shadow-lg"
                     >
-                        Get a Quote
+                        Contact Me
 
                         <HiArrowRight className="text-lg transition-transform duration-300 group-hover:translate-x-1" />
                     </NavLink>
@@ -104,7 +103,7 @@ const Navbar = () => {
                 {/* Mobile Menu Button */}
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/40 text-2xl text-white transition hover:bg-white/10 lg:hidden"
+                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#C5F36B]/50 text-2xl text-[#C5F36B] transition hover:bg-[#C5F36B] hover:text-[#1B2B27] lg:hidden"
                     aria-label={isOpen ? 'Close menu' : 'Open menu'}
                     aria-expanded={isOpen}
                 >
@@ -121,7 +120,7 @@ const Navbar = () => {
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="overflow-hidden border-t border-white/20 bg-[#167D75] lg:hidden"
+                        className="overflow-hidden border-t border-[#C5F36B]/20 bg-[#1B2B27] lg:hidden"
                     >
                         <div className="mx-auto max-w-7xl space-y-1 px-5 py-5">
 
@@ -131,10 +130,10 @@ const Navbar = () => {
                                     to={item.path}
                                     onClick={() => setIsOpen(false)}
                                     className={({ isActive }) =>
-                                        `block rounded-lg px-4 py-3 text-sm font-semibold transition ${
+                                        `block rounded-lg px-4 py-3 text-sm font-semibold transition-all duration-300 ${
                                             isActive
-                                                ? 'bg-white/15 text-white'
-                                                : 'text-white/80 hover:bg-white/10 hover:text-white'
+                                                ? 'bg-[#C5F36B] text-[#1B2B27]'
+                                                : 'text-white/80 hover:bg-white/10 hover:text-[#C5F36B]'
                                         }`
                                     }
                                 >
@@ -145,7 +144,7 @@ const Navbar = () => {
                             <NavLink
                                 to="/contact"
                                 onClick={() => setIsOpen(false)}
-                                className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 font-bold text-[#167D75] transition hover:bg-white/90"
+                                className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-[#C5F36B] px-5 py-3 font-bold text-[#1B2B27] transition hover:bg-white"
                             >
                                 Get a Quote
                                 <HiArrowRight className="text-lg" />
