@@ -6,6 +6,8 @@ import Main from "./Layouts/Main";
 import Home from "./Pages/Home/Home/Home";
 import Contact from "./Pages/Contact/Contact";
 import NotFound from "./Pages/NotFound/NotFound";
+import About from "./Pages/Abouts/About/About";
+import Team from "./Pages/TeamPage/Team/Team";
 
 export const router = createBrowserRouter([
     {
@@ -21,9 +23,19 @@ export const router = createBrowserRouter([
                 element: <Contact />
             },
             {
+                path: '/about',
+                element: <About />
+            },
+            {
+                path: '/team',
+                element: <Team />
+            },
+            
+        ]
+        
+    },
+    {
                 path: '*',
                 element: <NotFound />
             }
-        ]
-    },
 ]);
