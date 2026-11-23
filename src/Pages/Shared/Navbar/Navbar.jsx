@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { HiMenuAlt3, HiX, HiArrowRight } from 'react-icons/hi';
 import { motion, AnimatePresence } from 'motion/react';
+import logo from '../../../assets/logo.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -30,33 +31,24 @@ const Navbar = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 z-50 w-full transition-all duration-500 ${
-                isScrolled
+            className={`fixed top-0 left-0 z-50 w-full transition-all duration-500 ${isScrolled
                     ? 'bg-[#1B2B27] shadow-lg shadow-black/20'
                     : 'bg-transparent'
-            }`}
+                }`}
         >
-            <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+            <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
 
                 {/* Logo */}
                 <NavLink
                     to="/"
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center gap-3"
+                    className="flex shrink-0 items-center"
                 >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#C5F36B] text-xl font-extrabold text-[#1B2B27]">
-                        C
-                    </div>
-
-                    <div>
-                        <h2 className="text-xl font-extrabold tracking-tight text-white">
-                            Company<span className="text-[#C5F36B]">.</span>
-                        </h2>
-
-                        <p className="text-[10px] font-semibold uppercase tracking-[2px] text-white/70">
-                            Building The Future
-                        </p>
-                    </div>
+                    <img
+                        src={logo}
+                        alt="Lifting & Safety Solutions"
+                        className="h-10 w-auto max-w-[190px] object-contain brightness-0 invert sm:h-12 sm:max-w-[230px] lg:h-14 lg:max-w-[270px]"
+                    />
                 </NavLink>
 
                 {/* Desktop Navigation */}
@@ -67,10 +59,9 @@ const Navbar = () => {
                             key={item.name}
                             to={item.path}
                             className={({ isActive }) =>
-                                `relative text-sm font-semibold transition-colors duration-300 ${
-                                    isActive
-                                        ? 'text-[#C5F36B]'
-                                        : 'text-white/80 hover:text-[#C5F36B]'
+                                `relative text-sm font-semibold transition-colors duration-300 ${isActive
+                                    ? 'text-[#C5F36B]'
+                                    : 'text-white/80 hover:text-[#C5F36B]'
                                 }`
                             }
                         >
@@ -130,10 +121,9 @@ const Navbar = () => {
                                     to={item.path}
                                     onClick={() => setIsOpen(false)}
                                     className={({ isActive }) =>
-                                        `block rounded-lg px-4 py-3 text-sm font-semibold transition-all duration-300 ${
-                                            isActive
-                                                ? 'bg-[#C5F36B] text-[#1B2B27]'
-                                                : 'text-white/80 hover:bg-white/10 hover:text-[#C5F36B]'
+                                        `block rounded-lg px-4 py-3 text-sm font-semibold transition-all duration-300 ${isActive
+                                            ? 'bg-[#C5F36B] text-[#1B2B27]'
+                                            : 'text-white/80 hover:bg-white/10 hover:text-[#C5F36B]'
                                         }`
                                     }
                                 >

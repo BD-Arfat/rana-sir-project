@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import {
@@ -6,13 +7,16 @@ import {
     HiOutlinePhone,
     HiOutlineMapPin,
     HiOutlineClock,
-    HiOutlineChatBubbleLeftRight,
-    HiOutlineCheckCircle,
     HiOutlineQuestionMarkCircle,
+    HiOutlineArrowRight,
+    HiOutlinePaperAirplane,
+    HiOutlineBuildingOffice2,
+    HiOutlineCheckCircle,
 } from 'react-icons/hi2';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const Contact = () => {
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -23,41 +27,21 @@ const Contact = () => {
 
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const contactInfo = [
-        {
-            icon: <HiOutlineEnvelope />,
-            title: 'Email Address',
-            value: 'solutionliftguard@gmail.com',
-            link: 'mailto:solutionliftguard@gmail.com',
-            description: 'Send us an email anytime.',
-        },
-        {
-            icon: <HiOutlinePhone />,
-            title: 'Phone / WhatsApp',
-            value: '+880 1321-229107',
-            link: 'https://wa.me/8801321229107',
-            description: 'Connect with our team directly.',
-        },
-        {
-            icon: <HiOutlineMapPin />,
-            title: 'Our Location',
-            value: 'Bangladesh',
-            link: null,
-            description: 'Serving industrial safety needs.',
-        },
-        {
-            icon: <HiOutlineClock />,
-            title: 'Working Hours',
-            value: 'Saturday – Thursday',
-            link: null,
-            description: 'Friday: Closed',
-        },
+    const whatsappNumber = '8801805844021';
+
+    const phoneNumbers = [
+        '+880 1805-844021',
+        '+880 1805-844022',
+        '+880 1805-844023',
     ];
+
+    const officeAddress =
+        '2nd Floor Wali Mansion, 600 Sk Mujib Road, Chattogram, Bangladesh';
 
     const faqs = [
         {
             question: 'How can I request a quotation?',
-            answer: 'You can contact us through the contact form, email or WhatsApp. Share your requirements and our team will assist you.',
+            answer: 'You can contact us through our contact form, email or WhatsApp. Share your requirements and our team will assist you with the necessary information.',
         },
         {
             question: 'What services does LiftGuard Solution provide?',
@@ -65,7 +49,11 @@ const Contact = () => {
         },
         {
             question: 'Can I discuss a custom project?',
-            answer: 'Yes. You can share your project requirements with us through the contact form or WhatsApp.',
+            answer: 'Yes. We welcome custom project inquiries. Share your project requirements with our team and we will help you find the right solution.',
+        },
+        {
+            question: 'How can I contact your support team?',
+            answer: 'You can reach our team through phone, WhatsApp or email. Our team is available Saturday to Thursday.',
         },
     ];
 
@@ -82,11 +70,11 @@ const Contact = () => {
         e.preventDefault();
 
         const subject = encodeURIComponent(
-            formData.subject || 'New Contact Inquiry - LiftGuard Solution'
+            formData.subject || 'New Contact Inquiry - LiftGuard Solutions'
         );
 
         const body = encodeURIComponent(
-            `Hello LiftGuard Solution,\n\n` +
+            `Hello LiftGuard Solutions,\n\n` +
             `Name: ${formData.name}\n` +
             `Email: ${formData.email}\n` +
             `Phone: ${formData.phone}\n` +
@@ -95,168 +83,363 @@ const Contact = () => {
             `Thank you.`
         );
 
-        window.location.href = `mailto:solutionliftguard@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href =
+            `mailto:solutionliftguard@gmail.com?subject=${subject}&body=${body}`;
 
         setIsSubmitted(true);
+
+        setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: '',
+        });
     };
 
     const inputStyle =
-        'w-full rounded-xl border border-[#1B2B27]/10 bg-[#F7F9F3] px-4 py-3.5 text-sm text-[#1B2B27] outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-[#789B38] focus:bg-white focus:ring-4 focus:ring-[#789B38]/10';
+        'w-full rounded-xl border border-gray-200 bg-[#F8FAF6] px-4 py-3.5 text-sm text-[#1B2B27] outline-none transition-all duration-300 placeholder:text-gray-400 focus:border-[#789B38] focus:bg-white focus:ring-4 focus:ring-[#789B38]/10';
 
     return (
-        <main className="overflow-hidden bg-[#F7F9F3]">
+
+        <main className="overflow-hidden bg-white">
 
             {/* ================= HERO SECTION ================= */}
-           {/* ================= HERO SECTION ================= */}
-<section className="relative flex min-h-[600px] items-center overflow-hidden bg-[#1B2B27] py-24 md:min-h-[680px] md:py-32">
 
-    {/* Background Image */}
-    <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=90&w=2000')",
-        }}
-    />
-
-    {/* Dark Overlay */}
-    <div className="absolute inset-0 bg-[#1B2B27]/80" />
-
-    {/* Gradient Overlay */}
-    <div className="absolute inset-0 bg-gradient-to-r from-[#1B2B27]/95 via-[#1B2B27]/75 to-[#1B2B27]/40" />
-
-    {/* Background Decoration */}
-    <div className="absolute -right-40 -top-40 h-96 w-96 rounded-full bg-[#C5F36B]/10 blur-[100px]" />
-    <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-[#789B38]/10 blur-[100px]" />
-
-    <div className="relative mx-auto w-full max-w-7xl px-5 lg:px-8">
-
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="mx-auto max-w-3xl text-center"
-        >
-
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#C5F36B]/20 bg-white/10 px-5 py-2.5 backdrop-blur-sm">
-                <span className="h-2 w-2 rounded-full bg-[#C5F36B]" />
-                <span className="text-xs font-bold uppercase tracking-[3px] text-[#C5F36B]">
-                    Get In Touch
-                </span>
-            </div>
-
-            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl">
-                Let's Talk About
-                <span className="mt-2 block text-[#C5F36B]">
-                    Your Next Project.
-                </span>
-            </h1>
-
-            <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-white/80 md:text-lg">
-                Have a question or need a reliable industrial safety
-                solution? Get in touch with our team. We are ready
-                to understand your requirements and help you move forward.
-            </p>
-
-            <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-
-                <a
-                    href="#contact-form"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#C5F36B] px-7 py-4 text-sm font-bold text-[#1B2B27] transition-all duration-300 hover:bg-white"
-                >
-                    Send Us a Message
-                    <HiArrowUpRight className="text-lg" />
-                </a>
-
-                <a
-                    href="https://wa.me/8801321229107?text=Hello%20LiftGuard%20Solution!"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/5 px-7 py-4 text-sm font-bold text-white backdrop-blur-sm transition-all duration-300 hover:border-[#C5F36B] hover:bg-[#C5F36B] hover:text-[#1B2B27]"
-                >
-                    <FaWhatsapp className="text-lg" />
-                    Chat on WhatsApp
-                </a>
-
-            </div>
-
-        </motion.div>
-
-    </div>
-</section>
+             <section
+                        className="relative min-h-[350px] md:min-h-[450px] flex items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed"
+                        style={{
+                            backgroundImage:
+                                "url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=90&w=2000')",
+                        }}
+                    >
+                        {/* Background Overlay */}
+                        <div className="absolute inset-0 bg-[#1B2B27]/45"></div>
+            
+                        {/* Content */}
+                        <div className="relative z-10 text-center px-5">
+                            <motion.h1
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8 }}
+                                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white"
+                            >
+                                Contact<span className="text-[#C5F36B]">.</span>
+                            </motion.h1>
+                        </div>
+            
+                        {/* Bottom Decoration */}
+                        <div className="absolute bottom-0 left-0 w-full h-1 bg-[#C5F36B]"></div>
+            
+                    </section>
 
 
             {/* ================= CONTACT INFORMATION ================= */}
-            <section className="relative z-10 -mt-1 py-16 md:py-20">
+
+            <section className="relative bg-[#F7F9F3] py-20 md:py-28">
 
                 <div className="mx-auto max-w-7xl px-5 lg:px-8">
 
-                    <div className="mb-12 text-center">
-                        <span className="text-sm font-bold uppercase tracking-[3px] text-[#789B38]">
+                    <motion.div
+                        initial={{ opacity: 0, y: 25 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="mb-14"
+                    >
+
+                        <span className="text-xs font-bold uppercase tracking-[3px] text-[#789B38]">
                             Contact Information
                         </span>
 
-                        <h2 className="mt-4 text-3xl font-extrabold text-[#1B2B27] md:text-4xl">
-                            We're Here to Help You.
+                        <h2 className="mt-4 text-3xl font-extrabold text-[#1B2B27] md:text-5xl">
+                            Let's Connect With
+                            <span className="text-[#789B38]"> Our Team.</span>
                         </h2>
 
-                        <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-gray-500">
-                            Choose your preferred way to connect with LiftGuard Solution.
+                        <p className="mt-5 max-w-2xl text-sm leading-7 text-gray-500 md:text-base">
+                            Have questions or need assistance? Choose your
+                            preferred way to reach our team.
                         </p>
-                    </div>
 
-                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                    </motion.div>
 
-                        {contactInfo.map((item, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 25 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                whileHover={{ y: -7 }}
-                                className="group rounded-2xl border border-[#1B2B27]/10 bg-white p-7 shadow-sm transition-all duration-300 hover:border-[#789B38]/40 hover:shadow-xl"
-                            >
 
-                                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#C5F36B]/20 text-2xl text-[#789B38] transition-all duration-300 group-hover:bg-[#1B2B27] group-hover:text-[#C5F36B]">
-                                    {item.icon}
+                    <div className="grid gap-7 lg:grid-cols-2">
+
+                        {/* LEFT: CONTACT DETAILS */}
+
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7 }}
+                            className="rounded-3xl border border-[#1B2B27]/10 bg-white p-7 shadow-sm md:p-10"
+                        >
+
+                            <div className="mb-9 flex items-center gap-4">
+
+                                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#C5F36B]/25 text-2xl text-[#789B38]">
+                                    <HiOutlinePhone />
                                 </div>
 
-                                <h3 className="mt-6 text-lg font-bold text-[#1B2B27]">
-                                    {item.title}
+                                <div>
+                                    <h3 className="text-xl font-extrabold text-[#1B2B27]">
+                                        Contact Details
+                                    </h3>
+
+                                    <p className="mt-1 text-sm text-gray-400">
+                                        Get in touch with us directly.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            {/* PHONE NUMBERS */}
+
+                            <div className="border-b border-gray-100 pb-8">
+
+                                <div className="mb-5 flex items-center gap-3">
+
+                                    <HiOutlinePhone className="text-xl text-[#789B38]" />
+
+                                    <h4 className="font-bold text-[#1B2B27]">
+                                        Phone / WhatsApp
+                                    </h4>
+
+                                </div>
+
+                                <div className="space-y-3">
+
+                                    {phoneNumbers.map((phone, index) => {
+
+                                        const cleanNumber = phone.replace(/[^0-9]/g, '');
+
+                                        return (
+
+                                            <div
+                                                key={index}
+                                                className="flex items-center justify-between gap-3 rounded-xl bg-[#F7F9F3] p-4 transition-all duration-300 hover:bg-[#C5F36B]/20"
+                                            >
+
+                                                <div className="flex items-center gap-3">
+
+                                                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-sm font-bold text-[#789B38] shadow-sm">
+                                                        {index + 1}
+                                                    </span>
+
+                                                    <a
+                                                        href={`tel:+${cleanNumber}`}
+                                                        className="text-sm font-bold text-[#1B2B27] transition hover:text-[#789B38] sm:text-base"
+                                                    >
+                                                        {phone}
+                                                    </a>
+
+                                                </div>
+
+                                                <div className="flex items-center gap-2">
+
+                                                    <a
+                                                        href={`tel:+${cleanNumber}`}
+                                                        aria-label={`Call ${phone}`}
+                                                        className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-[#789B38] shadow-sm transition hover:bg-[#1B2B27] hover:text-white"
+                                                    >
+                                                        <HiOutlinePhone />
+                                                    </a>
+
+                                                    <a
+                                                        href={`https://wa.me/${cleanNumber}`}
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        aria-label={`WhatsApp ${phone}`}
+                                                        className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-green-600 shadow-sm transition hover:bg-green-600 hover:text-white"
+                                                    >
+                                                        <FaWhatsapp />
+                                                    </a>
+
+                                                </div>
+
+                                            </div>
+
+                                        );
+                                    })}
+
+                                </div>
+
+                            </div>
+
+
+                            {/* EMAIL */}
+
+                            <div className="flex items-start gap-4 border-b border-gray-100 py-7">
+
+                                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#C5F36B]/20 text-xl text-[#789B38]">
+                                    <HiOutlineEnvelope />
+                                </div>
+
+                                <div className="min-w-0">
+
+                                    <h4 className="font-bold text-[#1B2B27]">
+                                        Email Address
+                                    </h4>
+
+                                    <a
+                                        href="mailto:solutionliftguard@gmail.com"
+                                        className="mt-2 block break-all text-sm font-semibold text-[#789B38] hover:text-[#1B2B27]"
+                                    >
+                                        solutionliftguard@gmail.com
+                                    </a>
+
+                                    <p className="mt-1 text-xs text-gray-400">
+                                        Send us your inquiries anytime.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            {/* WORKING HOURS */}
+
+                            <div className="flex items-start gap-4 pt-7">
+
+                                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#C5F36B]/20 text-xl text-[#789B38]">
+                                    <HiOutlineClock />
+                                </div>
+
+                                <div>
+
+                                    <h4 className="font-bold text-[#1B2B27]">
+                                        Working Hours
+                                    </h4>
+
+                                    <p className="mt-2 text-sm font-semibold text-[#789B38]">
+                                        Saturday – Thursday
+                                    </p>
+
+                                    <p className="mt-1 text-xs text-gray-400">
+                                        Friday: Closed
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </motion.div>
+
+
+                        {/* RIGHT: OFFICE LOCATION */}
+
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7 }}
+                            className="relative flex flex-col overflow-hidden rounded-3xl bg-[#1B2B27] p-7 md:p-10"
+                        >
+
+                            <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#C5F36B]/10 blur-[90px]" />
+
+                            <div className="relative">
+
+                                <span className="text-xs font-bold uppercase tracking-[3px] text-[#C5F36B]">
+                                    Visit Our Office
+                                </span>
+
+                                <h3 className="mt-4 text-3xl font-extrabold text-white md:text-4xl">
+                                    Find Us
+                                    <span className="text-[#C5F36B]"> Here.</span>
                                 </h3>
 
-                                {item.link ? (
-                                    <a
-                                        href={item.link}
-                                        target={item.link.startsWith('http') ? '_blank' : undefined}
-                                        rel={item.link.startsWith('http') ? 'noreferrer' : undefined}
-                                        className="mt-2 block break-words text-sm font-semibold text-[#789B38] transition-colors hover:text-[#1B2B27]"
-                                    >
-                                        {item.value}
-                                    </a>
-                                ) : (
-                                    <p className="mt-2 text-sm font-semibold text-[#789B38]">
-                                        {item.value}
-                                    </p>
-                                )}
-
-                                <p className="mt-3 text-sm leading-6 text-gray-500">
-                                    {item.description}
+                                <p className="mt-4 text-sm leading-7 text-white/50">
+                                    We welcome your inquiries and look forward
+                                    to connecting with you.
                                 </p>
 
-                            </motion.div>
-                        ))}
+                            </div>
+
+
+                            {/* OFFICE VISUAL */}
+
+                            <div className="relative mt-9 flex min-h-[210px] flex-1 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#30483D] to-[#17251F]">
+
+                                <div className="absolute inset-0 opacity-20"
+                                    style={{
+                                        backgroundImage:
+                                            'radial-gradient(#C5F36B 1px, transparent 1px)',
+                                        backgroundSize: '25px 25px',
+                                    }}
+                                />
+
+                                <div className="relative text-center">
+
+                                    <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl border border-[#C5F36B]/30 bg-[#C5F36B]/10 text-4xl text-[#C5F36B]">
+                                        <HiOutlineBuildingOffice2 />
+                                    </div>
+
+                                    <p className="mt-5 text-lg font-bold text-white">
+                                        LIFTING & SAFETY SOLUTIONS
+                                    </p>
+
+                                    <p className="mt-2 text-xs uppercase tracking-[3px] text-white/40">
+                                        Chattogram, Bangladesh
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            {/* ADDRESS */}
+
+                            <div className="relative mt-7 rounded-2xl border border-white/10 bg-white/5 p-6">
+
+                                <div className="flex items-start gap-4">
+
+                                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#C5F36B]/15 text-2xl text-[#C5F36B]">
+                                        <HiOutlineMapPin />
+                                    </div>
+
+                                    <div>
+
+                                        <h4 className="font-bold text-white">
+                                            Our Office Address
+                                        </h4>
+
+                                        <p className="mt-3 text-sm leading-7 text-white/60">
+                                            {officeAddress}
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                                <a
+                                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(officeAddress)}`}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#C5F36B] transition hover:text-white"
+                                >
+                                    Get Directions
+
+                                    <HiArrowUpRight />
+                                </a>
+
+                            </div>
+
+                        </motion.div>
 
                     </div>
+
                 </div>
+
             </section>
 
 
-           
-
-
             {/* ================= FAQ SECTION ================= */}
-            <section className="bg-[#F7F9F3] py-20 md:py-24">
+
+            <section className="bg-[#F7F9F3] py-20 md:py-28">
 
                 <div className="mx-auto max-w-4xl px-5 lg:px-8">
 
@@ -267,90 +450,124 @@ const Contact = () => {
                         transition={{ duration: 0.6 }}
                         className="mb-12 text-center"
                     >
+
                         <div className="mb-5 inline-flex items-center gap-2 text-[#789B38]">
+
                             <HiOutlineQuestionMarkCircle className="text-xl" />
-                            <span className="text-sm font-bold uppercase tracking-[3px]">
+
+                            <span className="text-xs font-bold uppercase tracking-[3px]">
                                 Frequently Asked Questions
                             </span>
+
                         </div>
 
-                        <h2 className="text-3xl font-extrabold text-[#1B2B27] md:text-4xl">
+                        <h2 className="text-3xl font-extrabold text-[#1B2B27] md:text-5xl">
                             Got Questions?
-                            <span className="block text-[#789B38]">
+
+                            <span className="mt-2 block text-[#789B38]">
                                 We've Got Answers.
                             </span>
                         </h2>
+
+                        <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-gray-500">
+                            Find answers to some common questions about
+                            our services and communication.
+                        </p>
+
                     </motion.div>
+
 
                     <div className="space-y-4">
 
                         {faqs.map((faq, index) => (
+
                             <motion.details
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="group rounded-2xl border border-[#1B2B27]/10 bg-white p-6 transition-all duration-300 open:border-[#789B38]/40 open:shadow-md"
+                                transition={{
+                                    duration: 0.5,
+                                    delay: index * 0.08,
+                                }}
+                                className="group rounded-2xl border border-[#1B2B27]/10 bg-white p-6 transition-all duration-300 open:border-[#789B38]/40 open:shadow-lg md:p-7"
                             >
 
-                                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-bold text-[#1B2B27]">
+                                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-bold text-[#1B2B27] md:text-base">
+
                                     {faq.question}
 
-                                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#C5F36B]/30 text-lg text-[#1B2B27] transition-transform duration-300 group-open:rotate-45">
+                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#C5F36B]/30 text-xl text-[#1B2B27] transition-all duration-300 group-open:rotate-45 group-open:bg-[#1B2B27] group-open:text-white">
                                         +
                                     </span>
+
                                 </summary>
 
-                                <p className="mt-4 border-t border-[#1B2B27]/10 pt-4 text-sm leading-7 text-gray-500">
+                                <p className="mt-5 border-t border-gray-100 pt-5 text-sm leading-8 text-gray-500">
                                     {faq.answer}
                                 </p>
 
                             </motion.details>
+
                         ))}
 
                     </div>
 
                 </div>
+
             </section>
 
 
             {/* ================= BOTTOM CTA ================= */}
-            <section className="bg-white px-5 py-16 md:py-20">
+
+            <section className="bg-white px-5 py-16 md:py-24">
 
                 <motion.div
                     initial={{ opacity: 0, y: 25 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7 }}
-                    className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-[#1B2B27] px-7 py-12 text-center md:px-16 md:py-16"
+                    className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-[#1B2B27] px-7 py-16 text-center md:px-16 md:py-20"
                 >
 
-                    <div className="absolute -right-20 -top-32 h-72 w-72 rounded-full bg-[#C5F36B]/10 blur-[80px]" />
+                    <div className="absolute -right-20 -top-32 h-80 w-80 rounded-full bg-[#C5F36B]/10 blur-[100px]" />
+
+                    <div className="absolute -bottom-40 -left-20 h-80 w-80 rounded-full bg-[#789B38]/20 blur-[100px]" />
 
                     <div className="relative">
-                        <h2 className="text-3xl font-extrabold text-white md:text-4xl">
+
+                        <span className="text-xs font-bold uppercase tracking-[3px] text-[#C5F36B]">
+                            Let's Work Together
+                        </span>
+
+                        <h2 className="mt-5 text-3xl font-extrabold text-white md:text-5xl">
                             Ready to Work With Us?
                         </h2>
 
-                        <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/60 md:text-base">
+                        <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-white/60 md:text-base">
                             Let's discuss your requirements and find the right
-                            solution for your business.
+                            lifting and safety solutions for your business.
                         </p>
 
                         <a
-                            href="https://wa.me/8801321229107?text=Hello%20LiftGuard%20Solution!"
+                            href={`https://wa.me/${whatsappNumber}?text=Hello%20LiftGuard%20Solutions!`}
                             target="_blank"
                             rel="noreferrer"
-                            className="mt-8 inline-flex items-center gap-3 rounded-xl bg-[#C5F36B] px-8 py-4 text-sm font-bold text-[#1B2B27] transition-all duration-300 hover:bg-white"
+                            className="group mt-9 inline-flex items-center gap-3 rounded-xl bg-[#C5F36B] px-8 py-4 text-sm font-bold text-[#1B2B27] transition-all duration-300 hover:bg-white"
                         >
+
                             <FaWhatsapp className="text-lg" />
+
                             Talk to Our Team
-                            <HiArrowUpRight className="text-lg" />
+
+                            <HiArrowUpRight className="text-lg transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+
                         </a>
+
                     </div>
 
                 </motion.div>
+
             </section>
 
         </main>
