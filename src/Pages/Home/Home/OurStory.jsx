@@ -93,7 +93,8 @@ const OurStory = () => {
                                 <div className="mb-3 flex items-center gap-2">
                                     <span className="h-2 w-2 rounded-full bg-[#C5F36B]" />
                                     <span className="text-xs font-bold uppercase tracking-[3px] text-[#C5F36B]">
-                                        LiftGuard Solution
+
+                                        LIFTING & SAFETY SOLUTIONS
                                     </span>
                                 </div>
 
