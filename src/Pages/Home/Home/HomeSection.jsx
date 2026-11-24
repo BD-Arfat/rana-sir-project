@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { HiArrowUpRight } from 'react-icons/hi2';
 import { FaWhatsapp } from 'react-icons/fa';
@@ -7,31 +8,27 @@ import bannerVideo from '../../../video/video-1.mp4';
 
 const HomeSection = () => {
 
-    // Email click handler
-    const handleEmailClick = (e) => {
-        e.preventDefault();
+    // WhatsApp Handler
+    const handleWhatsAppClick = () => {
+        const phoneNumber = '8801805844022';
+        const message = 'Hello LIFTING & SAFETY SOLUTIONS! I would like to know more about your services.';
 
-        const email = 'solutionliftguard@gmail.com';
-        const subject = 'Inquiry About LiftGuard Solution';
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    };
+
+    // Email Handler
+    const handleEmailClick = () => {
+        const email = 'info@lrlsbd.com';
+        const subject = 'Inquiry About LIFTING & SAFETY SOLUTIONS';
         const body = `Hello Team,
 
 I would like to know more about your services.`;
 
-        const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
         const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-        if (isMobile) {
-            window.location.href = mailtoUrl;
-        } else {
-            const newWindow = window.open(gmailUrl, '_blank');
-
-            if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-                window.location.href = mailtoUrl;
-            }
-        }
+        window.open(gmailUrl, '_blank', 'noopener,noreferrer');
     };
 
     return (
@@ -49,13 +46,13 @@ I would like to know more about your services.`;
                     playsInline
                 />
 
-                {/* Light Dark Green Overlay */}
+                {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-[#1B2B27]/20 via-[#1B2B27]/35 to-[#1B2B27]/60" />
 
                 {/* Main Content */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
 
-                    {/* Small Badge */}
+                    {/* Badge */}
                     <div
                         data-aos="fade-down"
                         className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#C5F36B]/50 bg-[#1B2B27]/50 px-5 py-2 backdrop-blur-sm"
@@ -72,13 +69,13 @@ I would like to know more about your services.`;
 
                         <TypeAnimation
                             sequence={[
-                                'Welcome To LiftGuard Solution',
+                                'Welcome To LIFTING & SAFETY SOLUTIONS',
                                 1500,
                                 'Your Safety, Our Priority',
                                 1500,
                                 'Industrial Safety Experts',
                                 1500,
-                                'Reliable LiftGuard Solution',
+                                'Reliable LIFTING & SAFETY SOLUTIONS',
                                 1500
                             ]}
                             wrapper="span"
@@ -112,27 +109,27 @@ I would like to know more about your services.`;
                     >
 
                         {/* WhatsApp Button */}
-                        <a
-                            href="https://wa.me/8801321229107?text=Hello%20LiftGuard%20Solution!"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <button
+                            onClick={handleWhatsAppClick}
+                            type="button"
                             className="group flex items-center justify-center gap-3 rounded-lg border border-[#C5F36B] bg-[#C5F36B] px-6 py-3 text-center text-sm font-bold text-[#1B2B27] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-white hover:bg-white hover:shadow-xl md:text-base"
                         >
                             <FaWhatsapp className="text-xl transition-transform duration-300 group-hover:scale-110" />
 
-                            +88 01321229107
+                            +880 1805-844022
 
                             <HiArrowUpRight className="text-lg transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                        </a>
+                        </button>
 
                         {/* Email Button */}
                         <button
                             onClick={handleEmailClick}
+                            type="button"
                             className="group flex items-center justify-center gap-3 rounded-lg border border-[#C5F36B] bg-[#1B2B27]/60 px-6 py-3 text-sm font-bold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-[#C5F36B] hover:text-[#1B2B27] hover:shadow-xl md:text-base"
                         >
                             <MdEmail className="text-xl transition-transform duration-300 group-hover:scale-110" />
 
-                            solutionliftguard@gmail.com
+                            info@lrlsbd.com
 
                             <HiArrowUpRight className="text-lg transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                         </button>

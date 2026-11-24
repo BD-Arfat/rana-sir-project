@@ -203,7 +203,7 @@ const WhyChoose = () => {
                         </h3>
 
                         <p className="mt-3 text-sm leading-7 text-white/65">
-                            Get in touch with LiftGuard Solution to discuss your requirements.
+                            Get in touch with LIFTING & SAFETY SOLUTIONS to discuss your requirements.
                         </p>
 
                     </div>

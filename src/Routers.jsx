@@ -8,6 +8,7 @@ import Contact from "./Pages/Contact/Contact";
 import NotFound from "./Pages/NotFound/NotFound";
 import About from "./Pages/Abouts/About/About";
 import Team from "./Pages/TeamPage/Team/Team";
+import Services from "./Pages/Services/Services/Services";
 
 export const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
             {
                 path: '/team',
                 element: <Team />
+            },
+            {
+                path: '/services',
+                element: <Services/>
             },
             
         ]
