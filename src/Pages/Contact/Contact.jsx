@@ -44,7 +44,7 @@ const Contact = () => {
             answer: 'You can contact us through our contact form, email or WhatsApp. Share your requirements and our team will assist you with the necessary information.',
         },
         {
-            question: 'What services does LiftGuard Solution provide?',
+            question: 'What services does LIFTING & SAFETY SOLUTIONS provide?',
             answer: 'We provide lifting equipment solutions, industrial safety support, equipment inspection, maintenance and safety consultation.',
         },
         {
@@ -70,11 +70,11 @@ const Contact = () => {
         e.preventDefault();
 
         const subject = encodeURIComponent(
-            formData.subject || 'New Contact Inquiry - LiftGuard Solutions'
-        );
+            formData.subject || 'New Contact Inquiry - LIFTING & SAFETY SOLUTIONS'
+        )
 
         const body = encodeURIComponent(
-            `Hello LiftGuard Solutions,\n\n` +
+            `Hello LIFTING & SAFETY SOLUTIONS,\n\n` +
             `Name: ${formData.name}\n` +
             `Email: ${formData.email}\n` +
             `Phone: ${formData.phone}\n` +
@@ -84,7 +84,7 @@ const Contact = () => {
         );
 
         window.location.href =
-            `mailto:solutionliftguard@gmail.com?subject=${subject}&body=${body}`;
+            `mailto:info@lrlsbd.com?subject=${subject}&body=${body}`;
 
         setIsSubmitted(true);
 
@@ -285,10 +285,10 @@ const Contact = () => {
                                     </h4>
 
                                     <a
-                                        href="mailto:solutionliftguard@gmail.com"
+                                        href="mailto:info@lrlsbd.com"
                                         className="mt-2 block break-all text-sm font-semibold text-[#789B38] hover:text-[#1B2B27]"
                                     >
-                                        solutionliftguard@gmail.com
+                                        info@lrlsbd.com
                                     </a>
 
                                     <p className="mt-1 text-xs text-gray-400">

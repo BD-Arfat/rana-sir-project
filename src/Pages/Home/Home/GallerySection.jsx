@@ -5,11 +5,13 @@ import {
     HiChevronRight,
     HiXMark,
 } from 'react-icons/hi2';
+import image1 from '../../../assets/loadtest1.jpg'
+import image2 from '../../../assets/loadtest2.jpg'
 
 const GallerySection = () => {
     const images = [
-        'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=90&w=1400',
-        'https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?q=90&w=1400',
+        `${image1}`,
+        `${image2}`,
         'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=90&w=1400',
         'https://images.unsplash.com/photo-1567789884554-0b844b597180?q=90&w=1400',
         'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=90&w=1400',

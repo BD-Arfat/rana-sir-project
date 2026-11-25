@@ -73,7 +73,7 @@ const WhoWeAre = () => {
 
                         {/* Description */}
                         <p className="text-gray-600 leading-8 mt-6">
-                            LiftGuard Solution is dedicated to providing reliable
+                            Hello LIFTING & SAFETY SOLUTIONS is dedicated to providing reliable
                             lifting equipment and industrial safety solutions.
                             We focus on helping businesses maintain safer and
                             more efficient working environments.

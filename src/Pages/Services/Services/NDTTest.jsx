@@ -83,7 +83,7 @@ const ServiceCard = ({ title, number, items, delay = 0 }) => {
 
 const NDTTest = () => {
     return (
-        <section className="bg-[#F7F9F3]">
+        <section id='ndt-test' className="bg-[#F7F9F3]">
 
 
 

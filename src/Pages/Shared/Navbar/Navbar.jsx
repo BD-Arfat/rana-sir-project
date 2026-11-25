@@ -25,7 +25,7 @@ const Navbar = () => {
         { name: 'Home', path: '/' },
         { name: 'About Us', path: '/about' },
         { name: 'Services', path: '/services' },
-        { name: 'Projects', path: '/projects' },
+        // { name: 'Projects', path: '/projects' },
         // { name: 'Our Team', path: '/team' },
     ];
 
@@ -136,7 +136,7 @@ const Navbar = () => {
                                 onClick={() => setIsOpen(false)}
                                 className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-[#C5F36B] px-5 py-3 font-bold text-[#1B2B27] transition hover:bg-white"
                             >
-                                Get a Quote
+                                Contact Me
                                 <HiArrowRight className="text-lg" />
                             </NavLink>
 

@@ -4,7 +4,7 @@ import image from '../../../assets/LoadTest.png'
 
 const VisualInspectionLoadTest = () => {
     return (
-        <section className="bg-[#F7F9F3] py-16 sm:py-20 lg:py-24">
+        <section id='visual-inspection-load-test' className="bg-[#F7F9F3] py-16 sm:py-20 lg:py-24">
 
             <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
 

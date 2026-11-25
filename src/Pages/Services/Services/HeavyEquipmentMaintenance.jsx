@@ -29,7 +29,7 @@ const maintenanceServices = [
 
 const HeavyEquipmentMaintenance = () => {
     return (
-        <section className="relative py-20 sm:py-24 bg-white overflow-hidden">
+        <section id='heavy-equipment-maintenance' className="relative py-20 sm:py-24 bg-white overflow-hidden">
 
             <div className="max-w-7xl mx-auto px-5 sm:px-8">
 
@@ -101,7 +101,7 @@ const HeavyEquipmentMaintenance = () => {
                                         {service.id}
                                     </span>
 
-                                    <h4 className="flex-1 text-base sm:text-lg font-semibold text-[#1B2B27] group-hover:text-[#789B38] transition-colors">
+                                    <h4 className="flex-1 text-base sm:text-sm font-semibold text-[#1B2B27] group-hover:text-[#789B38] transition-colors">
                                         {service.title}
                                     </h4>
 
