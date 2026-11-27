@@ -1,13 +1,14 @@
+
 import React from 'react';
 import { motion } from 'motion/react';
+import servicehero from '../../../assets/servicehero.png';
 
 const ServicesHero = () => {
     return (
         <section
-            className="relative min-h-[350px] md:min-h-[450px] flex items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed"
+            className="relative min-h-[350px] md:min-h-[450px] flex items-center justify-center bg-cover bg-center bg-no-repeat"
             style={{
-                backgroundImage:
-                    "url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=90&w=2000')",
+                backgroundImage: `url(${servicehero})`,
             }}
         >
             {/* Overlay */}

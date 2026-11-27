@@ -48,7 +48,8 @@ const OurStory = () => {
                     <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-[#1B2B27]/10 bg-white px-5 py-2 shadow-sm">
                         <span className="h-2 w-2 rounded-full bg-[#C5F36B]" />
                         <span className="text-xs font-bold uppercase tracking-[3px] text-[#1B2B27]">
-                            About LiftGuard
+                            About
+                            LIFTING & SAFETY
                         </span>
                     </div>
 
@@ -171,7 +172,8 @@ const OurStory = () => {
 
                         {/* Description */}
                         <p className="mt-7 text-base leading-8 text-[#1B2B27]/70">
-                            At LiftGuard Solution, we believe that workplace safety
+                            At
+                             LIFTING & SAFETY SOLUTIONS, we believe that workplace safety
                             is the foundation of every successful industrial operation.
                             Our focus is on providing dependable lifting gear and
                             heavy equipment safety solutions that help businesses

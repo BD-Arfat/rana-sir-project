@@ -9,6 +9,7 @@ import NotFound from "./Pages/NotFound/NotFound";
 import About from "./Pages/Abouts/About/About";
 import Team from "./Pages/TeamPage/Team/Team";
 import Services from "./Pages/Services/Services/Services";
+import ApprovedBy from "./Pages/ApprovedBy/ApprovedBy";
 
 export const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
             {
                 path: '/about',
                 element: <About />
+            },
+            {
+                path: '/ApprovedBy',
+                element: <ApprovedBy/>
             },
             // {
             //     path: '/team',

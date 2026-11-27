@@ -14,6 +14,7 @@ import {
     HiOutlineCheckCircle,
 } from 'react-icons/hi2';
 import { FaWhatsapp } from 'react-icons/fa';
+import contacthero from '../../assets/contacthero.png'
 
 const Contact = () => {
 
@@ -106,32 +107,30 @@ const Contact = () => {
 
             {/* ================= HERO SECTION ================= */}
 
-             <section
-                        className="relative min-h-[350px] md:min-h-[450px] flex items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed"
-                        style={{
-                            backgroundImage:
-                                "url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=90&w=2000')",
-                        }}
+            <section
+                className="relative min-h-[350px] md:min-h-[450px] flex items-center justify-center bg-cover bg-center bg-no-repeat"
+                style={{
+                    backgroundImage: `url(${contacthero})`,
+                }}
+            >
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-[#1B2B27]/45"></div>
+
+                {/* Heading */}
+                <div className="relative z-10 text-center px-5">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white"
                     >
-                        {/* Background Overlay */}
-                        <div className="absolute inset-0 bg-[#1B2B27]/45"></div>
-            
-                        {/* Content */}
-                        <div className="relative z-10 text-center px-5">
-                            <motion.h1
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8 }}
-                                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white"
-                            >
-                                Contact<span className="text-[#C5F36B]">.</span>
-                            </motion.h1>
-                        </div>
-            
-                        {/* Bottom Decoration */}
-                        <div className="absolute bottom-0 left-0 w-full h-1 bg-[#C5F36B]"></div>
-            
-                    </section>
+                        Contact<span className="text-[#C5F36B]">.</span>
+                    </motion.h1>
+                </div>
+
+                {/* Bottom Border */}
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-[#C5F36B]"></div>
+            </section>
 
 
             {/* ================= CONTACT INFORMATION ================= */}
@@ -272,6 +271,7 @@ const Contact = () => {
 
                             {/* EMAIL */}
 
+                            {/* EMAIL */}
                             <div className="flex items-start gap-4 border-b border-gray-100 py-7">
 
                                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#C5F36B]/20 text-xl text-[#789B38]">
@@ -284,15 +284,32 @@ const Contact = () => {
                                         Email Address
                                     </h4>
 
-                                    <a
-                                        href="mailto:info@lrlsbd.com"
-                                        className="mt-2 block break-all text-sm font-semibold text-[#789B38] hover:text-[#1B2B27]"
-                                    >
-                                        info@lrlsbd.com
-                                    </a>
+                                    <div className="mt-3 space-y-3">
 
-                                    <p className="mt-1 text-xs text-gray-400">
-                                        Send us your inquiries anytime.
+                                        <a
+                                            href="mailto:accounts@lrlsbd.com"
+                                            className="block break-all text-sm font-semibold text-[#789B38] hover:text-[#1B2B27] transition"
+                                        >
+                                            info@lrlsbd.com
+                                        </a>
+                                        <a
+                                            href="mailto:accounts@lrlsbd.com"
+                                            className="block break-all text-sm font-semibold text-[#789B38] hover:text-[#1B2B27] transition"
+                                        >
+                                            accounts@lrlsbd.com
+                                        </a>
+
+                                        <a
+                                            href="mailto:service@lrlsbd.com"
+                                            className="block break-all text-sm font-semibold text-[#789B38] hover:text-[#1B2B27] transition"
+                                        >
+                                            service@lrlsbd.com
+                                        </a>
+
+                                    </div>
+
+                                    <p className="mt-3 text-xs text-gray-400">
+                                        Contact us for accounts, services and general inquiries.
                                     </p>
 
                                 </div>

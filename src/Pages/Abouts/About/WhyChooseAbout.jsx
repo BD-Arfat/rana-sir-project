@@ -114,7 +114,7 @@ const WhyChooseAbout = () => {
 
                             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1B2B27] leading-tight">
                                 Why Businesses
-                                <span className="text-[#789B38]"> Choose LiftGuard.</span>
+                                <span className="text-[#789B38]"> Choose LIFTING & SAFETY.</span>
                             </h2>
 
                             <p className="text-gray-500 leading-7 mt-5">

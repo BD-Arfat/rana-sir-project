@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { HiArrowUpRight } from 'react-icons/hi2';
 import { Link } from 'react-router';
-import image from '../../../assets/Core.png'
+import image from '../../../assets/ndttest.png'
 
 const coreServices = [
     'Visual Testing (VT) Inspection',
@@ -155,36 +155,19 @@ const NDTTest = () => {
                     </motion.div>
 
                     {/* NDT Image */}
+                    {/* NDT Image */}
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="relative min-h-[400px] lg:min-h-full overflow-hidden rounded-xl shadow-xl"
+                        className="relative   flex items-center justify-center"
                     >
                         <img
                             src={image}
                             alt="LIFTING & SAFETY SOLUTIONS"
-                            className="absolute inset-0 w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
+                            className="w-full rounded-xl h-full object-contain hover:scale-105 transition-transform duration-700"
                         />
-
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#1B2B27]/90 via-[#1B2B27]/10 to-transparent"></div>
-
-                        <div className="absolute bottom-0 left-0 p-7 sm:p-9">
-
-                            <span className="text-[#C5F36B] text-sm font-bold uppercase tracking-[3px]">
-                                
-LIFTING & SAFETY SOLUTIONS
-                            </span>
-
-                            <h3 className="text-white text-3xl sm:text-4xl font-bold mt-3">
-                                NDT Testing &
-                                <span className="block">
-                                    Inspection
-                                </span>
-                            </h3>
-
-                        </div>
                     </motion.div>
 
                 </div>

@@ -81,7 +81,7 @@ const WhyChoose = () => {
                     <h2 className="text-3xl font-extrabold leading-tight text-[#1B2B27] md:text-5xl">
                         Why Businesses
                         <span className="block text-[#789B38]">
-                            Choose LiftGuard.
+                            Choose LIFTING & SAFETY .
                         </span>
                     </h2>
 

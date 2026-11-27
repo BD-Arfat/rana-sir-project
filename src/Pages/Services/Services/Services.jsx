@@ -12,6 +12,7 @@ import HeavyEquipmentMaintenance from './HeavyEquipmentMaintenance';
 import FFALSFSection from './FFALSFSection';
 import RiggerTraining from './RiggerTraining';
 import LSASection from './LSASection';
+import TrainingProgram from './TrainingProgram';
 
 const Services = () => {
 
@@ -48,6 +49,7 @@ const Services = () => {
             {/* <RiggerTraining/> */}
             <FFALSFSection />
             <LSASection/>
+            <TrainingProgram/>
         </div>
     );
 };

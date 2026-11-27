@@ -123,7 +123,7 @@ const VisualInspectionLoadTest = () => {
                         transition={{ duration: 0.8 }}
                         className="relative"
                     >
-                        <div className="relative h-[450px] sm:h-[550px] lg:h-[545px] overflow-hidden rounded-2xl shadow-2xl shadow-[#1B2B27]/15">
+                        <div className="relative   overflow-hidden rounded-xl shadow-2xl shadow-[#1B2B27]/15">
 
                             <img
                                 src={image}
